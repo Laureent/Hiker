@@ -1,0 +1,34 @@
+body{
+    background: #5A7359;
+}
+#main{
+    display: block;
+    margin: auto;
+}
+#User{
+    margin: auto;
+
+}
+#pass{
+    margin: auto;
+
+}
+#submit{
+    margin: auto;
+
+}
+
+.login-form >input {
+    width: 40%;
+    margin-bottom: 1rem;
+}
+
+.login-form {
+    border: 1px solid black;
+    border-radius: 1.5rem;
+    padding: 4rem;
+}
+#Logo{
+    width: 225px;
+    height: 156px;
+}

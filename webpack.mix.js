@@ -10,8 +10,15 @@ const mix = require('laravel-mix');
  | file for the application as well as bundling up all the JS files.
  |
  */
+mix.options({
+    postCss:[
+        require('postcss-custom-media')
+    ]
+})
 
 mix.js('resources/js/app.js', 'public/js')
     .postCss('resources/css/app.css', 'public/css', [
-        //
-    ]);
+
+    ])
+    .postCss('resources/css/Login.css','public/css')
+;
