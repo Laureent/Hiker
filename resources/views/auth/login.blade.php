@@ -1,9 +1,9 @@
 @extends('layouts.Auth')
 @section('title')
-    -bejelentkezés
+    - bejelentkezés
 @endsection
 @section('content')
-    <div id="main">
+{{--    <div id="main">
         <form>
         <div class="row">
             <div class="col-2"></div>
@@ -19,8 +19,48 @@
             <div class="col-2"></div>
         </div>
         </form>
+    </div>--}}
+    <div class="card">
+        <div class="card-body">
+            <h5>Bejelentkezés</h5>
+            {!! Form::open(['route' => 'authenticate', "class" =>"is-invalid"]) !!}
+
+
+
+            <div class="row mt-3">
+                <div class="col">
+                    {{Form::label('email','Email')}}
+                    {{Form::email('email', $value = old('email'), $attributes = ["class"=>"form-control"])}}
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col">
+                    {{Form::label('password',"Jelszó")}}
+
+                    @error('password')
+                    {{Form::password('password', ['class' => 'form-control is-invalid'])}}
+                    <div id="passwordFeedback" class="invalid-feedback">
+                        {{ $message }}
+                    </div>
+                    @else
+                        {{Form::password('password', ['class' => 'form-control'])}}
+                        @enderror
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col">
+                    {{Form::submit('Bejelentkezés', ['class' => 'btn btn-primary'])}}
+                </div>
+                <p>Nincs még fiókja?<a href="{{route('register.create')}}">Itt regisztráljon</a></p>
+            </div>
+            {!! Form::close() !!}
+
+            @if($errors->any)
+                @foreach($errors->all() as $message)
+                    <li>{{$message}}</li>
+                @endforeach
+            @endif
+        </div>
     </div>
-
-
-
 @endsection

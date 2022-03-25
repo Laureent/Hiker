@@ -16,7 +16,7 @@ class RegisterStoreRequest extends FormRequest
         return [
             "name" => ["required", "unique:users","max:255"],
             "email" => ["required", "unique:users","max:255"],
-            "password" => ["required", "min:7","max:255"],
+            "password" => ["required","confirmed", "min:7","max:255"],
         ];
     }
 }
