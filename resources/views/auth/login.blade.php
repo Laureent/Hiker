@@ -22,20 +22,21 @@
     </div>--}}
     <div class="card">
         <div class="card-body">
-            <h5>Bejelentkezés</h5>
+            <h3>Bejelentkezés</h3>
+            <img src="Hiker_Logo_Beige.png" alt="Logo">
             {!! Form::open(['route' => 'authenticate', "class" =>"is-invalid"]) !!}
 
 
 
             <div class="row mt-3">
                 <div class="col">
-                    {{Form::label('email','Email')}}
+                    {{Form::label('email','Email',['class'=>'label'])}}
                     {{Form::email('email', $value = old('email'), $attributes = ["class"=>"form-control"])}}
                 </div>
             </div>
             <div class="row mt-3">
                 <div class="col">
-                    {{Form::label('password',"Jelszó")}}
+                    {{Form::label('password',"Jelszó",['class'=>'label'])}}
 
                     @error('password')
                     {{Form::password('password', ['class' => 'form-control is-invalid'])}}

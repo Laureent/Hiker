@@ -1,34 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
 body{
+    position: relative;
     background: #5A7359;
 }
-#main{
+.card{
+    border-radius: 20px;
+    top: 15em;
     display: block;
     margin: auto;
+    background-color: rgba(149,149,149,0.4);
+    width: 50%;
 }
-#User{
+#email{
     margin: auto;
-
+    width: 50%;
 }
-#pass{
+#password{
     margin: auto;
-
+    width: 50%;
 }
-#submit{
+h3{
+    color: white;
+    text-align: center;
+    font-size: 300%;
+    font-family: 'Pacifico', cursive;
+}
+img{
+    display: block;
     margin: auto;
-
+    padding: 1em;
+    width:20%;
 }
-
-.login-form >input {
-    width: 40%;
-    margin-bottom: 1rem;
-}
-
-.login-form {
-    border: 1px solid black;
-    border-radius: 1.5rem;
-    padding: 4rem;
-}
-#Logo{
-    width: 225px;
-    height: 156px;
+.label{
+    color: white;
 }
