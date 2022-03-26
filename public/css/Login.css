@@ -11,12 +11,21 @@ body{
     margin: auto;
     background-color: rgba(149,149,149,0.4);
     width: 50%;
+    box-shadow: 15px 10px 15px #444444;
+}
+#name{
+    margin: auto;
+    width: 50%;
 }
 #email{
     margin: auto;
     width: 50%;
 }
 #password{
+    margin: auto;
+    width: 50%;
+}
+#password_confirmation{
     margin: auto;
     width: 50%;
 }
@@ -31,7 +40,31 @@ img{
     margin: auto;
     padding: 1em;
     width:20%;
+    filter:drop-shadow(15px 10px 15px #444444) ;
 }
 .label{
+    display: block;
+    margin-left: 225px;
     color: white;
 }
+.btn{
+
+    background-color: rgba(149,149,149,0.4);
+    display: block;
+    margin:auto;
+    border: 3px solid #FFFFFF;
+    box-sizing: border-box;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 32px;
+}
+.btn:hover{
+
+    background-color: #5A7359;
+    display: block;
+    margin:auto;
+    border: 3px solid #FFFFFF;
+    box-sizing: border-box;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 32px;
+}
+

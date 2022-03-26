@@ -6,11 +6,12 @@
     <section id="registration">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">Regisztráció</h5>
+                <h3 class="card-title">Regisztráció</h3>
+                <img src="Hiker_Logo_Beige.png" alt="Logo">
                 {!! Form::open(['route' => 'register.store']) !!}
                 <div class="row mt-3">
                     <div class="col">
-                        {{Form::label('name','Név')}}
+                        {{Form::label('name','Név',['class'=>'label'])}}
                         {{Form::text('name', $value = old('name'), $attributes = ["class"=>"form-control"])}}
 
                     </div>
@@ -18,13 +19,13 @@
 
                 <div class="row mt-3">
                     <div class="col">
-                        {{Form::label('email','Email')}}
+                        {{Form::label('email','Email',['class'=>'label'])}}
                         {{Form::email('email', $value = old('email'), $attributes = ["class"=>"form-control"])}}
                     </div>
                 </div>
                 <div class="row mt-3">
                     <div class="col">
-                        {{Form::label('password',"Jelszó")}}
+                        {{Form::label('password',"Jelszó",['class'=>'label'])}}
 
                         @error('password')
                         {{Form::password('password', ['class' => 'form-control is-invalid'])}}
@@ -38,7 +39,7 @@
                 </div>
                 <div class="row mt-3">
                     <div class="col">
-                        {{Form::label('password_confirmation',"Jelszó mégegyszer")}}
+                        {{Form::label('password_confirmation',"Jelszó mégegyszer",['class'=>'label'])}}
                         {{Form::password('password_confirmation', ['class' => 'form-control'])}}
                     </div>
                 </div>

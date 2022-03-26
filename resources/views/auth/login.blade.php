@@ -30,13 +30,13 @@
 
             <div class="row mt-3">
                 <div class="col">
-                    {{Form::label('email','Email',['class'=>'label'])}}
+                    {{Form::label('email','Email:',['class'=>'label'])}}
                     {{Form::email('email', $value = old('email'), $attributes = ["class"=>"form-control"])}}
                 </div>
             </div>
             <div class="row mt-3">
                 <div class="col">
-                    {{Form::label('password',"Jelszó",['class'=>'label'])}}
+                    {{Form::label('password',"Jelszó:",['class'=>'label'])}}
 
                     @error('password')
                     {{Form::password('password', ['class' => 'form-control is-invalid'])}}
@@ -53,7 +53,7 @@
                 <div class="col">
                     {{Form::submit('Bejelentkezés', ['class' => 'btn btn-primary'])}}
                 </div>
-                <p>Nincs még fiókja?<a href="{{route('register.create')}}">Itt regisztráljon</a></p>
+                <p class="pointer">Nincs még fiókja?<a href="{{route('register.create')}}">Itt regisztráljon</a></p>
             </div>
             {!! Form::close() !!}
 
