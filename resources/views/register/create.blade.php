@@ -47,7 +47,7 @@
                     <div class="col">
                         {{Form::submit('Regisztráció', ['class' => 'btn btn-primary'])}}
                     </div>
-                    <p>Van már fiókja?<a href="{{route('auth.login')}}">Itt be tud jelentkezni</a></p>
+                    <p class="pointer">Van már fiókja?<a href="{{route('auth.login')}}"> Itt be tud jelentkezni</a></p>
                 </div>
                 {!! Form::close() !!}
 
