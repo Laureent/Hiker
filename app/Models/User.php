@@ -27,14 +27,46 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function friends(){
-        return $this->belongsToMany(User::class,'friendships','user_id','friend_id');
+    protected function friendsOfThisUser()
+    {
+        return $this->belongsToMany(User::class, 'friendships', 'first_user', 'second_user')
+            ->withPivot('status')
+            ->wherePivot('status', 'confirmed');
     }
 
-    public function toArray()
+    protected function thisUserFriendOf()
     {
-        return [
-            "friends" => $this->friends,
-        ];
+        return $this->belongsToMany(User::class, 'friendships', 'first_user', 'second_user')
+            ->withPivot('status')
+            ->wherePivot('status', 'confirmed');
+    }
+
+    public function getFriendsAttribute()
+    {
+        if ( ! array_key_exists('friends', $this->relations)) $this->loadFriends();
+        return $this->getRelation('friends');
+    }
+
+    protected function loadFriends()
+    {
+        if ( ! array_key_exists('friends', $this->relations))
+        {
+            $friends = $this->mergeFriends();
+            $this->setRelation('friends', $friends);
+        }
+    }
+
+    protected function mergeFriends()
+    {
+        if($temp = $this->friendsOfThisUser)
+            return $temp->merge($this->thisUserFriendOf);
+        else
+            return $this->thisUserFriendOf;
+    }
+
+    public function friend_requests()
+    {
+        return $this->hasMany(Friendship::class, 'second_user')
+            ->where('status', 'pending');
     }
 }

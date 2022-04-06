@@ -2,30 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Friendship;
-use Illuminate\Http\Request;
+use App\Models\User;
 
 class FriendshipController extends Controller
 {
-    private function CheckFriend($user1, $user2)
-    {
-        Friendship::select();
-    }
+    public function index(){
+        return view('friends.index',[
 
-    public function AddFriend()
-    {
-        if(!$this->CheckFriend())
-        {
-
-        }
-        else
-        {
-
-        }
-    }
-
-    public function DeleteFriend()
-    {
-
+        ]);
     }
 }

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\FriendshipController;
 use App\Http\Controllers\HikerController;
 use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
@@ -16,7 +17,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [HikerController::class,"index"])->middleware('auth')->name("home");
+//Üdvözlő oldal
+Route::get('/', [HikerController::class,"welcome"])->name("welcome");
+
 //Regisztráció
 Route::get('/register', [RegisterController::class,"create"])->name("register.create");
 Route::post('/register', [RegisterController::class,"store"])->name("register.store");
@@ -26,3 +29,12 @@ Route::post('/register', [RegisterController::class,"store"])->name("register.st
 Route::get('/login',[AuthController::class,'login'])->name("auth.login");
 Route::post('/authenticate',[AuthController::class,'authenticate'])->name("authenticate");
 Route::post('/logout',[AuthController::class,'logout'])->name("auth.logout");
+
+//Főoldal
+Route::get('/index', [HikerController::class,"index"])->middleware('auth')->name("home");
+
+//Barátok
+Route::get('/addfriend',[FriendshipController::class,'index'])->middleware('auth')->name('friends.index');
+Route::get('/addfriend/search/{id}',[FriendshipController::class,'search'])->name('friends.search');
+Route::get('/deletefrined/{id}',[FriendshipController::class,'deleteFriend'])->name('friends.delete');
+

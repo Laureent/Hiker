@@ -2,9 +2,9 @@
 @section('content')
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="#">About</a>
-        <a href="#">Services</a>
-        <a href="#">Clients</a>
+        <a href="#">Útvonalak</a>
+        <a href="{{route('friends.index')}}">Barátok</a>
+        <a href="#">Főoldal</a>
         <a href="#"> @auth
                 <form class="d-flex" action="{{route("auth.logout")}}" method="post" >
                     @csrf
