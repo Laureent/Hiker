@@ -34,7 +34,7 @@ Route::post('/logout',[AuthController::class,'logout'])->name("auth.logout");
 Route::get('/index', [HikerController::class,"index"])->middleware('auth')->name("home");
 
 //Barátok
-Route::get('/addfriend',[FriendshipController::class,'index'])->middleware('auth')->name('friends.index');
-Route::get('/addfriend/search/{id}',[FriendshipController::class,'search'])->name('friends.search');
+Route::get('/friends',[FriendshipController::class,'index'])->middleware('auth')->name('friends.index');
+Route::get('/friends/search',[FriendshipController::class,'search'])->name('friends.search');
 Route::get('/deletefrined/{id}',[FriendshipController::class,'deleteFriend'])->name('friends.delete');
 

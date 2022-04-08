@@ -16,16 +16,17 @@ class FriendshipController extends Controller
 
     public function search(){
         return view('friends.search',[
-           'user' => Auth::user(),
+            'user' => Auth::user(),
         ]);
     }
 
     public function show($name){
         if (User::where('name','=',$name) != null){
+            $user = User::where('name','=',$name);
             return $user = User::where('name','=',$name);
         }
         else{
-            return $user = "Nincs ilyen nevű felhasználó.";
+            return $user = null;
         }
     }
 
