@@ -5,8 +5,8 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 {{Form::text('name', $value = old('name'))}}
-                @foreach($friends as $friend)
-
+                @foreach($user->friends as $friend)
+                    <p>{{$friend->name}}</p>
                 @endforeach
             </div>
         </div>
