@@ -10,9 +10,8 @@
 @endsection
 @section('script')
     <script>
-        async function getName(){
-            data = await fetch('http://localhost:8881/api/friends/search/' + document.getElementById('name').value);
+        function getName(){
+            data = fetch('http://localhost:8881/api/friends/search/' + document.getElementById('name').value);
         }
-
     </script>
 @endsection

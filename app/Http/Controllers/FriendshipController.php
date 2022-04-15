@@ -22,26 +22,22 @@ class FriendshipController extends Controller
 
     public function show($name){
         if (User::where('name','=',$name) != null){
-            $user = User::where('name','=',$name);
-            return $user = User::where('name','=',$name);
+            return User::where('name','=',$name);
         }
         else{
-            return $user = null;
+            return null;
         }
     }
 
     public function acceptRequest($id){
         Friendship::where('id','=',$id)->update(['status'],['confirmed']);
-        return back();
     }
 
     public function addFriend($id){
-        Friendship::create(array('first_user' => Auth::user(),'second_user' => $id,'acted_user' => Auth::user(),'status' => 'pending'));
-        return back();
+        Friendship::create(array('first_user' => Auth::user()->id,'second_user' => $id,'acted_user' => Auth::user()->id,'status' => 'pending'));
     }
 
-    public function deleteFriend($id){
+    public function deleteFriends($id){
         Friendship::destroy($id);
-        return back();
     }
 }

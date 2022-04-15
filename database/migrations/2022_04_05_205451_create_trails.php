@@ -9,13 +9,13 @@ class CreateTrails extends Migration
     public function up()
     {
         Schema::create('trails', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->string('place');
-            $table->double('lenght');
+            $table->string('lenght');
             $table->string('difficulty');
-            $table->string('img');
+            $table->string('img')->nullable();
             $table->string('description');
-            //google map
+            $table->string('map',500);
             $table->timestamps();
         });
     }
