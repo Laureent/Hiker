@@ -7,7 +7,7 @@
         <div class="card">
             <div class="card-body">
                 <h3 class="card-title">Regisztráció</h3>
-                <img src="Hiker_Logo_Beige.png" alt="Logo">
+                <img src="img/Logos/Hiker_Logo_Beige.png" alt="Logo">
                 {!! Form::open(['route' => 'register.store']) !!}
                 <div class="row mt-3">
                     <div class="col">
