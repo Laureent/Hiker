@@ -1,5 +1,8 @@
 <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    @if($user->admin == 1)
+        <a href="{{route('admin.create')}}">Hozzáadás</a>
+    @endif
     <a href="{{route('home')}}">Főoldal</a>
     <a href="{{route('trails.index')}}">Útvonalak</a>
     <a href="{{route('friends.index')}}">Barátok</a>

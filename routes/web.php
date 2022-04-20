@@ -42,3 +42,6 @@ Route::get('/trails/show/{id}', [TrailController::class,'show'])->middleware('au
 Route::get('/friends',[FriendshipController::class,'index'])->middleware('auth')->name('friends.index');
 Route::get('/friends/search',[FriendshipController::class,'search'])->name('friends.search');
 
+//Admin
+Route::get('/admin/create',[TrailController::class,'create'])->name('admin.create');
+

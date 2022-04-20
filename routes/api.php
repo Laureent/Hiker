@@ -3,6 +3,7 @@
 use App\Http\Controllers\FriendshipController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TrailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,3 +25,6 @@ Route::get('/friends/search/{name}',[FriendshipController::class,'show'])->name(
 Route::put('/friends/search/{id}',[FriendshipController::class,'acceptRequest'])->name('friends.accept');
 Route::post('/friends/add/{id}',[FriendshipController::class,'addFriend'])->name('friends.add');
 Route::delete('/friends/delete/{id}',[FriendshipController::class,'deleteFriends'])->name('friends.delete');
+
+//Admin
+Route::post('/admin/create',[TrailController::class,'store'])->middleware('auth')->name('admin.store');

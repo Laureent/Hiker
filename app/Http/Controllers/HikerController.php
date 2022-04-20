@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HikerController extends Controller
 {
@@ -10,6 +11,8 @@ class HikerController extends Controller
         return view('index');
     }
     public function index(){
-        return view('hiker.index');
+        return view('hiker.index',[
+            'user' => Auth::user(),
+        ]);
     }
 }
