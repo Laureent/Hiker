@@ -5,6 +5,7 @@ use App\Http\Controllers\FriendshipController;
 use App\Http\Controllers\HikerController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\TrailController;
+use App\Http\Controllers\ImageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -45,4 +46,8 @@ Route::get('/friends/search',[FriendshipController::class,'search'])->name('frie
 //Admin
 Route::get('/admin/create',[TrailController::class,'create'])->middleware('auth')->name('admin.create');
 Route::post('/admin/create/store',[TrailController::class,'store'])->middleware('auth')->name('admin.store');
+
+//Image
+Route::get('/admin/image',[ImageController::class,'index'])->middleware('auth')->name('admin.image');
+Route::post('/admin/image/store',[ImageController::class,'store'])->middleware('auth')->name('admin.image.store');
 
