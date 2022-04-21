@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\TrailStoreRequest;
 use App\Models\Trail;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class TrailController extends Controller
@@ -31,5 +30,11 @@ class TrailController extends Controller
     public function store(TrailStoreRequest $request){
         $data = $request->validated();
         Trail::create($data);
+        session()->flash('success',"Sikeres hozzáadás!");
+        return view('admin.create',[
+            'user' => Auth::user(),
+        ]);
+
+
     }
 }

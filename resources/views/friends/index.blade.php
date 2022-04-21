@@ -29,6 +29,7 @@
     <script>
         function deleteFriend(id) {
 
+            //fetch({{route('friends.delete',['id' => 1])}})
         }
     </script>
 @endsection

@@ -12,16 +12,11 @@ class TrailStoreRequest extends FormRequest
         return true;
     }
 
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array
-     */
     public function rules()
     {
         return [
             "place" => ["string","required","max:100"],
-            "lenght" => ["required","max:10"],
+            "length" => ["required","max:10"],
             "difficulty" => ["required","max:25","string"],
             "description" => ["required","string","max:255"],
             "img" => ["string"],

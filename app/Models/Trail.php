@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Trail extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+      'place',
+      'length',
+      'difficulty',
+      'description',
+      'img',
+      'map',
+    ];
 }

@@ -14,12 +14,6 @@ class FriendshipController extends Controller
         ]);
     }
 
-    public function search(){
-        return view('friends.search',[
-            'user' => Auth::user(),
-        ]);
-    }
-
     public function show($name){
         if (User::where('name','=',$name) != null){
             return User::where('name','=',$name);

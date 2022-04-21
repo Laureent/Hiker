@@ -43,5 +43,6 @@ Route::get('/friends',[FriendshipController::class,'index'])->middleware('auth')
 Route::get('/friends/search',[FriendshipController::class,'search'])->name('friends.search');
 
 //Admin
-Route::get('/admin/create',[TrailController::class,'create'])->name('admin.create');
+Route::get('/admin/create',[TrailController::class,'create'])->middleware('auth')->name('admin.create');
+Route::post('/admin/create/store',[TrailController::class,'store'])->middleware('auth')->name('admin.store');
 

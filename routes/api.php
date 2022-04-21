@@ -26,5 +26,3 @@ Route::put('/friends/search/{id}',[FriendshipController::class,'acceptRequest'])
 Route::post('/friends/add/{id}',[FriendshipController::class,'addFriend'])->name('friends.add');
 Route::delete('/friends/delete/{id}',[FriendshipController::class,'deleteFriends'])->name('friends.delete');
 
-//Admin
-Route::post('/admin/create',[TrailController::class,'store'])->middleware('auth')->name('admin.store');

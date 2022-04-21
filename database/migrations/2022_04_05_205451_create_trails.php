@@ -11,7 +11,7 @@ class CreateTrails extends Migration
         Schema::create('trails', function (Blueprint $table) {
             $table->increments('id');
             $table->string('place');
-            $table->string('lenght');
+            $table->string('length');
             $table->string('difficulty');
             $table->string('img')->nullable();
             $table->string('description');
