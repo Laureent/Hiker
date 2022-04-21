@@ -47,9 +47,6 @@
     width: 40%;
 }
 
-
-.pagination{
-}
 .pagination li a.page-link{
     border-top-left-radius: .2rem;
     border-bottom-left-radius: .2rem;
@@ -100,4 +97,31 @@ input[type=text]:focus{
     margin: auto;
     display: flex;
     align-items: center;
+}
+.result{
+    display: flex;
+    border: solid 1px;
+    border-color: #b3b3b8;
+    border-radius: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 1rem;
+    justify-content: flex-start;
+    align-items: center;
+}
+#card_result_pic{
+    width: 60%;
+}
+#result_pic{
+    border-top-left-radius:20px;
+    border-bottom-right-radius:20px;
+}
+#card_result_content{
+   width:max-content;
+}
+#card_result_content h5{
+    text-align: center;
+}
+#card_result_content ul{
+    
 }

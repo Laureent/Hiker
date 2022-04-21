@@ -18,6 +18,7 @@ class TrailController extends Controller
     public function show($id){
         return view('trails.show',[
             'trail' => Trail::find($id),
+            'user' => Auth::user(),
         ]);
     }
 
