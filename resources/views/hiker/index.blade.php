@@ -1,4 +1,5 @@
 @extends('layouts.main')
+@section('title',"Főoldal")
 @section('content')
     <div class="container">
         <div class="card">

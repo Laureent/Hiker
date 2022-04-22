@@ -6,10 +6,10 @@
         <div class="result">
             <div class="row">
                 <div  id="card_result_pic" class="col-6">
-                    <img src="{{asset("img/Trails/".$trail->img)}}" id="result_pic" class=" img-fluid rounded-start" alt="...">
+                    <img src="{{asset("img/Trails/".$trail->img)}}" id="result_pic" class=" img-fluid rounded-start" alt="{{$trail->img}}">
                 </div>
                 <div id="card_result_content" class="col-6">
-                    <h5 class="card-title">{{$trail->place}}e</h5>
+                    <h5 class="card-title">{{$trail->place}}</h5>
                     <ul>
                         <li>{{$trail->length}}</li>
                         <li>{{$trail->difficulty}}</li>

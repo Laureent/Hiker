@@ -48,6 +48,6 @@ Route::get('/admin/create',[TrailController::class,'create'])->middleware('auth'
 Route::post('/admin/create/store',[TrailController::class,'store'])->middleware('auth')->name('admin.store');
 
 //Image
-Route::get('/admin/image',[ImageController::class,'index'])->middleware('auth')->name('admin.image');
-Route::post('/admin/image/store',[ImageController::class,'store'])->middleware('auth')->name('admin.image.store');
+Route::get('/admin/image/{id}',[ImageController::class,'index'])->middleware('auth')->name('admin.image');
+Route::post('/admin/image/store/{id}',[ImageController::class,'store'])->middleware('auth')->name('admin.image.store');
 

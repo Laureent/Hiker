@@ -18,12 +18,11 @@
             </ul>
         </div>
     @endif
-    <form action="{{route('admin.image.store')}}" method="post" enctype="multipart/form-data">
+    <form action="{{route('admin.image.store',['id' => $id])}}" method="post" enctype="multipart/form-data">
         {{ csrf_field() }}
         <div class="form-group row">
             <div class="col-sm-4">
                 <input type="file" class="form-control form-control-sm" name="image">
-
             </div>
         </div>
         <button type="submit" class="btn btn-primary btn-sm">Submit</button>

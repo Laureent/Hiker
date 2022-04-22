@@ -3,19 +3,21 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ImageStoreRequest;
+use App\Models\Trail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class ImageController extends Controller
 {
-    public function index()
+    public function index($id)
     {
         return view('admin.upload', [
             'user' => Auth::user(),
+            'id' => $id,
         ]);
     }
 
-    public function store(Request $request)
+    public function store(Request $request,$id)
     {
         $request->validate([
             'image.*' => ['required','mimes:jpeg,png,jpg'],
@@ -24,6 +26,7 @@ class ImageController extends Controller
 
             $file = $request->file('image');
             $fileName = $file->getClientOriginalName();
+            Trail::find($id)->update(['img' => $fileName]);
             $destinationPath = public_path() . '/img/Trails';
             $file->move($destinationPath, $fileName);
             return back()
