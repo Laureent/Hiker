@@ -1,6 +1,7 @@
 @extends('layouts.main')
 @section('title',$trail->place)
 @section('content')
+    @include('layouts.back')
     <div>
         @if($trail->img == null)
             <img src="{{asset('img/Trails/placeholder.jpg')}}" alt="placeholder">
@@ -10,6 +11,7 @@
         @endif
         @if($user->admin == 1)
                 <button onclick="window.location.href='{{route('admin.image',['id' => $trail->id])}}'">Kép hozzáadás</button>
+                <button onclick="window.location.href='{{route('admin.image.delete',['id' => $trail->id])}}'">Kép eltávolítása</button>
             @endif
         <p>{{$trail->place}}</p>
         <p>{{$trail->lenght}}</p>

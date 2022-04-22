@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ImageStoreRequest;
 use App\Models\Trail;
+use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -32,6 +33,15 @@ class ImageController extends Controller
             return back()
                 ->with('success','Sikeres képfeltöltés!')
                 ->with('image',$fileName);
+        }
+        return back();
+    }
+
+    public function delete($id){
+        $path = '/img/Trails/'.Trail::find($id)->img;
+        Trail::find($id)->update(['img' => null]);
+        if (File::exists($path)){
+            File::delete($path);
         }
         return back();
     }

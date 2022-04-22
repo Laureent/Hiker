@@ -50,4 +50,5 @@ Route::post('/admin/create/store',[TrailController::class,'store'])->middleware(
 //Image
 Route::get('/admin/image/{id}',[ImageController::class,'index'])->middleware('auth')->name('admin.image');
 Route::post('/admin/image/store/{id}',[ImageController::class,'store'])->middleware('auth')->name('admin.image.store');
+Route::get('/admin/image/delete/{id}',[ImageController::class,'delete'])->middleware('auth')->name('admin.image.delete');
 
