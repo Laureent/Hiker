@@ -35,7 +35,10 @@ class TrailController extends Controller
         return view('admin.create',[
             'user' => Auth::user(),
         ]);
+    }
 
-
+    public function destroy($id){
+        Trail::find($id)->delete();
+        return redirect(route('trails.index'));
     }
 }

@@ -18,5 +18,8 @@
         <p>{{$trail->difficulty}}</p>
         <p>{{$trail->description}}</p>
         <iframe src="{{$trail->map}}"></iframe>
+            @if($user->admin == 1)
+                <button onclick="window.location.href='{{route('admin.destroy',['id' => $trail->id])}}'">Útvonal törlése</button>
+            @endif
     </div>
 @endsection
