@@ -6,7 +6,11 @@
         <div class="result">
             <div class="row">
                 <div  id="card_result_pic" class="col-6">
-                    <img src="{{asset("img/Trails/".$trail->img)}}" id="result_pic" class=" img-fluid rounded-start" alt="{{$trail->img}}">
+                    @if($trail->img == null)
+                        <img src="{{asset("img/Trails/placeholder.jpg")}}" id="result_pic" class=" img-fluid rounded-start" alt="placeholder">
+                    @else
+                        <img src="{{asset("img/Trails/".$trail->img)}}" id="result_pic" class=" img-fluid rounded-start" alt="{{$trail->img}}">
+                    @endif
                 </div>
                 <div id="card_result_content" class="col-6">
                     <h5 class="card-title">{{$trail->place}}</h5>
@@ -19,7 +23,4 @@
             </div>
         </div>
     @endforeach
-@endsection
-@section('script')
-
 @endsection

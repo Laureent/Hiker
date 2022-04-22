@@ -21,7 +21,7 @@ class ImageController extends Controller
     public function store(Request $request,$id)
     {
         $request->validate([
-            'image.*' => ['required','mimes:jpeg,png,jpg'],
+            'image.*' => ['required','mimes:jpeg,png,jpg','image'],
         ]);
         if ($file = $request->hasFile('image')) {
 
