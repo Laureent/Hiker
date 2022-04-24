@@ -2,6 +2,10 @@
 @section('title',"Útvonalak")
 @section('content')
     @include('layouts.back')
+    {!! Form::open(['route' => 'trails.index','method'=>'get']) !!}
+    {{Form::select('difficulty',array('Összes' => 'Összes','Könnyű' => 'Könnyű','Közepes' => 'Közepes','Nehéz' => 'Nehéz'),$attributes = ["class"=>"form-control"])}}
+    {{Form::submit('Szűrés', ['class' => 'btn btn-primary'])}}
+    {!! Form::close()!!}
     @foreach($trails as $trail)
         <div class="result">
             <div class="row">

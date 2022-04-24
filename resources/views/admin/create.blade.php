@@ -10,7 +10,7 @@
     {{Form::text('length', $value = old('length'), $attributes = ["class"=>"form-control"])}}
 
     {{Form::label('difficulty','Az útvonal nehézsége',['class'=>'label'])}}
-    {{Form::text('difficulty', $value = old('lenght'), $attributes = ["class"=>"form-control"])}}
+    {{Form::select('difficulty',array('Könnyű' => 'Könnyű','Közepes' => 'Közepes','Nehéz' => 'Nehéz'),$attributes = ["class"=>"form-control"])}}
 
     {{Form::label('description','Az útvonal leírása',['class'=>'label'])}}
     {{Form::text('description', $value = old('description'), $attributes = ["class"=>"form-control"])}}

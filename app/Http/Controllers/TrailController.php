@@ -4,15 +4,30 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\TrailStoreRequest;
 use App\Models\Trail;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class TrailController extends Controller
 {
-    public function index(){
-        return view('trails.index',[
-            'trails' => Trail::all(),
-            'user' => Auth::user(),
-        ]);
+    public function index(Request $request){
+        if($request->has('difficulty')){
+            if($request->difficulty != 'Összes') {
+                return view('trails.index', [
+                    'trails' => Trail::where('difficulty',$request->difficulty)->get(),
+                    'user' => Auth::user(),
+                ]);
+            }else{
+                return view('trails.index', [
+                    'trails' => Trail::all(),
+                    'user' => Auth::user(),
+                ]);
+            }
+        }else{
+            return view('trails.index', [
+                'trails' => Trail::all(),
+                'user' => Auth::user(),
+            ]);
+        }
     }
 
     public function show($id){
