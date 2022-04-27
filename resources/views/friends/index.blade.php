@@ -1,7 +1,6 @@
 @extends('layouts.friends')
 @section('title',"Barátaid")
 @section('content')
-    @include('layouts.back')
     <nav aria-label="...">
         <ul class="pagination pagination-sm">
             <li class="page-item active" aria-current="page">

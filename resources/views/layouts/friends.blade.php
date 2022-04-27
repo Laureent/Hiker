@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="{{asset('css/nav.css')}}">
     <link rel="stylesheet" href="{{asset('css/friends.css')}}">
     <title>HIKER - @yield('title')</title>
-    <link rel="shortcut icon" href="img/Logos/Hiker_Logo_Green.png">
+    <link rel="shortcut icon" href="{{asset('img/Logos/Hiker_Logo_Green.png')}}">
 </head>
 <body>
     @include('layouts.nav')

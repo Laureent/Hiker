@@ -1,7 +1,6 @@
 @extends('layouts.main')
 @section('title',$trail->place)
 @section('content')
-    @include('layouts.back')
     <div>
         <h1 id="TrailShowTitle">{{$trail->place}}</h1>
         <div class="TrailShowPic">

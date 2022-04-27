@@ -1,10 +1,6 @@
 @extends('layouts.main')
-@section('title',"Útvonalak")
+@section('title',$title)
 @section('content')
-    {!! Form::open(['route' => 'trails.index','method'=>'get']) !!}
-    {{Form::select('difficulty',array('Összes' => 'Összes','Könnyű' => 'Könnyű','Közepes' => 'Közepes','Nehéz' => 'Nehéz'),$attributes = ["class"=>"form-control"])}}
-    {{Form::submit('Szűrés', ['class' => 'btn btn-primary'])}}
-    {!! Form::close()!!}
     @foreach($trails as $trail)
         <div class="result">
             <div class="row">

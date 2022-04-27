@@ -6,6 +6,7 @@ use App\Http\Controllers\HikerController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\TrailController;
 use App\Http\Controllers\ImageController;
+use App\Http\Controllers\ParkController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,11 +35,12 @@ Route::post('/logout',[AuthController::class,'logout'])->name("auth.logout");
 Route::group(['middleware' => 'auth'], function (){
     //Főoldal
     Route::get('/index', [HikerController::class,"index"])->name("home");
-    Route::get('/NationalParks/index',[\App\Http\Controllers\NationalParksController::class, 'index'])->name("NationalParks.index");
 
     //Útvonalak
     Route::get('/trails', [TrailController::class,'index'])->name("trails.index");
     Route::get('/trails/show/{id}', [TrailController::class,'show'])->name('trails.show');
+    Route::get('/trails/parks',[ParkController::class, 'index'])->name('parks.list');
+    Route::get('/trails/parks/show/{name}',[ParkController::class, 'show'])->name('parks.show');
 
     //Admin->Útvonalak szerkesztése
     Route::get('/admin/create',[TrailController::class,'create'])->name('admin.create');

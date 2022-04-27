@@ -1,7 +1,6 @@
 @extends('layouts.main')
 @section('title',"Útvonal hozzáadás")
 @section('content')
-    @include('layouts.back')
     <div id="CreateFormRow" class="row">
         <div id="CreateFormCol" class="col-12">
             {!! Form::open(['route' => 'admin.store','method'=>'post']) !!}
