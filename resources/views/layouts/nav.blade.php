@@ -3,7 +3,7 @@
     @if($user->admin == 1)
         <a href="{{route('admin.create')}}">Hozzáadás</a>
     @endif
-    <a href="{{route('home')}}">Főoldal</a>
+    <a href="{{route('home')}}" onclick="">Főoldal</a>
     <a href="{{route('trails.index')}}">Útvonalak</a>
     <a href="{{route('friends.index')}}">Barátok</a>
     <a href="#"> @auth
@@ -18,6 +18,7 @@
 </div>
 
 <script>
+
     function openNav() {
         document.getElementById("mySidenav").style.width = "250px";
         document.getElementById("main").style.marginLeft = "250px";

@@ -34,6 +34,7 @@ Route::post('/logout',[AuthController::class,'logout'])->name("auth.logout");
 Route::group(['middleware' => 'auth'], function (){
     //Főoldal
     Route::get('/index', [HikerController::class,"index"])->name("home");
+    Route::get('/NationalParks/index',[\App\Http\Controllers\NationalParksController::class, 'index'])->name("NationalParks.index");
 
     //Útvonalak
     Route::get('/trails', [TrailController::class,'index'])->name("trails.index");

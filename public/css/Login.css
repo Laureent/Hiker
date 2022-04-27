@@ -1,54 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
-body{
-    position: relative;
-    background: #5A7359;
-}
-.card{
-    border: none;
-    display: block;
-    margin: auto;
-    background-color:#5A7359;
+/*animations*/
 
-}
-#name{
-    margin: auto;
-}
-#email{
-    margin: auto;
-}
-#password{
-    margin: auto;
-}
-#password_confirmation{
-    margin: auto;
-}
-h3{
-    color: white;
-    text-align: center;
-    font-size: 300%;
-    font-family: 'Pacifico', cursive;
-}
-img{
-    display: block;
-    margin: auto;
-    padding: 1em;
-    width:80%;
-    filter:drop-shadow(15px 10px 15px #444444) ;
-}
-.label{
-    display: block;
-    color: white;
-}
-.btn{
-
-    background-color: rgba(149,149,149,0.4);
-    display: block;
-    margin:auto;
-    border: 3px solid #FFFFFF;
-    box-sizing: border-box;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    border-radius: 32px;
+@keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
 }
 .btn:hover{
 
@@ -60,11 +16,93 @@ img{
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     border-radius: 32px;
 }
+
+
+/* Styles */
+
+body{
+    background: #000000 url('img/BgLeafs.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+
+
+}
+.card{
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border: none;
+    height: fit-content;
+    width:300px;
+    background-color: #5a7359;
+    filter:drop-shadow(15px 10px 15px #000000);
+    animation: fadeIn 3s;
+}
+#name{
+    margin: auto;
+    animation: fadeIn 3s;
+}
+#email{
+    margin: auto;
+    animation: fadeIn 3s;
+}
+#password{
+    margin: auto;
+    animation: fadeIn 3s;
+}
+#password_confirmation{
+    margin: auto;
+    animation: fadeIn 3s;
+}
+
+h3{
+    color: white;
+    text-align: center;
+    font-size: 300%;
+    font-family: 'Pacifico', cursive;
+    animation: fadeIn 3s;
+}
+
+img{
+    display: block;
+    margin: auto;
+    padding: 1em;
+    width:80%;
+    filter:drop-shadow(15px 10px 15px #444444);
+
+}
+
+.label{
+    display: block;
+    color: white;
+    animation: fadeIn 3s;
+}
+
+.btn{
+    background-color: rgba(149,149,149,0.4);
+    display: block;
+    margin:auto;
+    border: 3px solid #FFFFFF;
+    box-sizing: border-box;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 32px;
+    animation: fadeIn 3s;
+}
+
+
 .pointer{
     margin-top: 10%;
     color: white;
+    animation: fadeIn 3s;
 }
 .pointer>a{
     color: white;
+    animation: fadeIn 3s;
 }
+
 

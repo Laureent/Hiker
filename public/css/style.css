@@ -1,12 +1,33 @@
-#main {
-    transition: margin-left .5s;
-    padding: 16px;
+/*Loading Spinner Style*/
+.loader{
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    background-color: rgba(204,204,204,0.5);
+    position:absolute;
+    z-index: 5;
 }
-.d-flex{
-    color: white;
+.loader div{
+    height:100px;
+    width: 100px;
+    border: 15px solid gray;
+    border-top-color: #5a7359;
     position: absolute;
-    right: 20px;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 50%;
+    animation: spin 1.5s infinite linear;
 }
+@keyframes spin {
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+/*Feed Style*/
 .card{
     margin-top: 2rem;
     margin-bottom: 2rem;
@@ -47,6 +68,7 @@
     width: 40%;
 }
 
+/* Friends Styles*/
 .pagination li a.page-link{
     border-top-left-radius: .2rem;
     border-bottom-left-radius: .2rem;
@@ -98,7 +120,10 @@ input[type=text]:focus{
     display: flex;
     align-items: center;
 }
+
+/*Trails Index & Show Styles*/
 .result{
+    height: 300px;
     display: flex;
     border: solid 1px;
     border-color: #b3b3b8;
@@ -109,12 +134,10 @@ input[type=text]:focus{
     justify-content: flex-start;
     align-items: center;
 }
-#card_result_pic{
-    width: 60%;
-}
 #result_pic{
     border-top-left-radius:20px;
     border-bottom-right-radius:20px;
+    object-fit: contain;
 }
 #card_result_content{
    width:max-content;
@@ -122,6 +145,59 @@ input[type=text]:focus{
 #card_result_content h5{
     text-align: center;
 }
-#card_result_content ul{
-    
+
+/* Admin Form styles */
+#CreateFormRow{
+    border: 1px solid #b3b3b8;
+    border-radius: 20px;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+
 }
+#CreateFormCol{
+    padding-top: 1rem;
+    margin: auto;
+    max-width: 75%;
+}
+#CreateFormCol .label{
+    margin-bottom: 0.5rem;
+}
+#CreateFormCol .btn{
+    background-color: rgba(48, 94, 34, 0.4);
+    display: block;
+    margin:auto;
+    border: 3px solid #FFFFFF;
+    box-sizing: border-box;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 32px;
+}
+#CreateFormCol .btn:hover{
+    background-color: #5A7359;
+    display: block;
+    margin:auto;
+    border: 3px solid #FFFFFF;
+    box-sizing: border-box;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 32px;
+}
+#CreateFormCol Select{
+    border: solid 1px #5a7359;
+    border-radius: 10px;
+    padding: 5px;
+    background-color: #9CAE96;
+    color: white;
+}
+
+/* Trial Showing pages Styles */
+.TrailShowPic{
+    width: 100%;
+    margin: auto;
+}
+#TrailShowDefaultPic{
+    width: 100%;
+}
+iframe{
+    height: 15rem;
+    width: 100%;
+}
+

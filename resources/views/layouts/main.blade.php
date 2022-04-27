@@ -10,12 +10,27 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>HIKER - @yield('title')</title>
     <link rel="shortcut icon" href="img/Logos/Hiker_Logo_Green.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
+<script>
+        $(window).on('load',function(){
+            $(".loader").fadeOut(500);
+        });
+</script>
+
+ <div class="loader">
+    <div></div>
+</div>
+
     @include('layouts.nav')
+
 <div class="container">
     @yield('content')
+
 </div>
     @yield('js')
+
+
 </body>
 </html>

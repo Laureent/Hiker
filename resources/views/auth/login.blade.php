@@ -10,14 +10,13 @@
             <img src="img/Logos/Hiker_Logo_Beige.png" alt="Logo">
             {!! Form::open(['route' => 'authenticate', "class" =>"is-invalid"]) !!}
 
-
-
             <div class="row mt-3">
                 <div class="col-12">
                     {{Form::label('email','Email:',['class'=>'label'])}}
                     {{Form::email('email', $value = old('email'), $attributes = ["class"=>"form-control"])}}
                 </div>
             </div>
+
             <div class="row mt-3">
                 <div class="col-12">
                     {{Form::label('password',"Jelszó:",['class'=>'label'])}}
