@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\ImageStoreRequest;
+
 use App\Models\Trail;
 use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;

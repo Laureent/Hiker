@@ -1,6 +1,8 @@
 @extends('layouts.main')
 @section('title',$title)
 @section('content')
+
+
     @foreach($trails as $trail)
         <div class="result">
             <div class="row">

@@ -6,7 +6,7 @@
 
             <div class="card-header">
 
-                <img id="profile_picture"  src="img/StaticProfiles/Avatar_2.jpg" alt="">
+                <img id="profile_picture"  src="img/StaticProfiles/Avatar_2.jpg " alt="Profile Picture">
                 <h5 id="Username">Bakonyi Ferenc</h5>
             </div>
             <div class="card-body">

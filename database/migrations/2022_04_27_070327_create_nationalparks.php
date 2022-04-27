@@ -11,6 +11,10 @@ class CreateNationalparks extends Migration
         Schema::create('nationalparks', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('phone');
+            $table->string('email');
+            $table->string('opening');
+            $table->string('webpage');
             $table->timestamps();
         });
     }

@@ -2,12 +2,13 @@
 @section('content')
         <div class="row">
                 @foreach($parks as $park)
-                        <div class="col">
+                        <div id="ParksIndexCol" class="col-md-6 col-sm-12">
                                 <a href="{{route('parks.show',['name' => $park->name])}}">
-                                        <img src="{{asset('img/NationalParks/'.$park->name)}}.png" alt="{{$park->name}}">
-                                        <p>{{$park->name}}</p>
+                                        <img id="ParkLogoImage" src="{{asset('img/NationalParks/'.$park->name)}}.png" alt="{{$park->name}}">
                                 </a>
+                            <p>{{$park->name}}</p>
                         </div>
+
                 @endforeach
         </div>
 @endsection

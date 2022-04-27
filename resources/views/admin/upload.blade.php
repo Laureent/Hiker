@@ -6,7 +6,7 @@
             <button type="button" class="close" data-dismiss="alert">×</button>
             <strong>{{ $message }}</strong>
         </div>
-        <img src="{{asset('img/Trails/'.Session::get('image'))}}">
+        <img src="{{asset('img/Trails/'.Session::get('image'))}}" alt="Túra kép">
     @endif
     @if (count($errors) > 0)
         <div class="alert alert-danger">

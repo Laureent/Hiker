@@ -7,7 +7,7 @@
     <div class="card">
         <div class="card-body">
             <h3>Bejelentkezés</h3>
-            <img src="img/Logos/Hiker_Logo_Beige.png" alt="Logo">
+            <img src="{{asset('img/Logos/Hiker_Logo_Beige.png')}}" alt="Logo">
             {!! Form::open(['route' => 'authenticate', "class" =>"is-invalid"]) !!}
 
             <div class="row mt-3">
