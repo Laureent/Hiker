@@ -3,14 +3,13 @@
 @section('content')
     @if ($message = Session::get('success'))
         <div class="alert alert-success alert-block">
-            <button type="button" class="close" data-dismiss="alert">×</button>
             <strong>{{ $message }}</strong>
         </div>
-        <img src="{{asset('img/Trails/'.Session::get('image'))}}" alt="Túra kép">
+        <img id="TrailPicUpload" src="{{asset('img/Trails/'.Session::get('image'))}}" alt="Túra kép">
     @endif
     @if (count($errors) > 0)
         <div class="alert alert-danger">
-            <strong>Whoops!</strong> There were some problems with your input.
+            <strong>Whoops!</strong> Valami nem jó nézd meg mégegyszer, hogy biztos jót töétesz-e fel!
             <ul>
                 @foreach ($errors->all() as $error)
                     <li>{{ $error }}</li>
@@ -20,11 +19,13 @@
     @endif
     <form action="{{route('admin.image.store',['id' => $id])}}" method="post" enctype="multipart/form-data">
         {{ csrf_field() }}
-        <div class="form-group row">
+        <div id="TrailPicUploadBar" class="form-group row">
             <div class="col-sm-4">
-                <input type="file" class="form-control form-control-sm" name="image">
+                <input id="fileuploaderbar" type="file" class="form-control form-control-sm" name="image">
+                <button  type="submit" class="btn btn-primary">Feltöltés</button>
             </div>
+
         </div>
-        <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+
     </form>
 @endsection

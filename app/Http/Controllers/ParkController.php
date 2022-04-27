@@ -16,7 +16,7 @@ class ParkController extends Controller
     }
     public function show($name){
         return view('parks.show',[
-            'title' => $name,
+            'park'=>Nationalpark::where('name',$name)->first(),
             'user' => Auth::user(),
             'trails' => Trail::where('nationalpark',$name)->get(),
         ]);

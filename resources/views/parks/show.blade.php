@@ -1,6 +1,29 @@
 @extends('layouts.main')
-@section('title',$title)
+@section('title',$park->name)
+@section('header')
+    <div class="ParkShowHeader">
+        <div class="row">
+            <div class="col-6" id="ParkShowHeaderTitle">
+                <h3>{{$park->name}}</h3>
+            </div>
+            <div class="col-6" id="ParkShowHeaderLogo">
+                <img src="{{asset("img/NationalParks/".$park->name)}}.png" alt="{{$park->name}} Logo">
+            </div>
+            <div class="col-12">
+                <ul>
+                    <li>Telefonszám: <a href="tel:{{$park->phone}}">{{$park->phone}}</a> </li>
+                    <li>email cím: <a href="mailto:{{$park->email}}">{{$park->email}}</a> </li>
+                    <li>webhely: <a href="{{$park->webpage}}">{{$park->webpage}}</a> </li>
+                    <li>nyitvatartás: <p>{{$park->opening}}</p></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+@endsection
+
 @section('content')
+
 
 
     @foreach($trails as $trail)

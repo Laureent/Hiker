@@ -122,27 +122,38 @@ input[type=text]:focus{
 }
 
 /*Trails Index & Show Styles*/
-.result{
+.TrailIndexCard{
     height: 300px;
     display: flex;
     border: solid 1px;
     border-color: #b3b3b8;
-    border-radius: 2rem;
     margin-top: 2rem;
     margin-bottom: 2rem;
-    border-radius: 1rem;
+    border-radius: 20px;
     justify-content: flex-start;
     align-items: center;
+    flex-direction: row;
 }
-#result_pic{
-    border-top-left-radius:20px;
-    border-bottom-right-radius:20px;
-    object-fit: contain;
+#TrailIndexCardpicContainer{
+    width: 300px;
+
+    object-fit: cover;
 }
-#card_result_content{
-   width:max-content;
+#TrailIndexCardpic{
+    width: 300px;
+
 }
-#card_result_content h5{
+#TrailIndexCardContent{
+    display: flex;
+   justify-content: center;
+    flex-direction: column;
+    margin: auto;
+}
+#TrailIndexSort{
+    border: solid 3px gray;
+    border-radius: 10px;
+    margin-top: 1rem;
+    padding: 0.5rem;
     text-align: center;
 }
 
@@ -190,7 +201,10 @@ input[type=text]:focus{
 
 /* Trial Showing pages Styles */
 .TrailShowPic{
-    width: 100%;
+    max-width:1000px;
+    min-width: 350px;
+    max-height: 830px;
+    min-height: 260px;
     margin: auto;
 }
 #TrailShowDefaultPic{
@@ -199,6 +213,26 @@ input[type=text]:focus{
 iframe{
     height: 15rem;
     width: 100%;
+}
+.TrailShowPicAdmin{
+    margin-left:auto;
+    margin-right: auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: max-content;
+    border: solid 2px gray;
+    border-radius: 10px;
+    max-width: 300px;
+    padding: 1rem;
+}
+#TrailShowBtn{
+    width: 130px;
+    max-height: 30px;
+    border-radius: 10px;
+    border-color: #5a7359;
 }
 
 /* Parks Styles */
@@ -212,8 +246,23 @@ iframe{
 #ParkLogoImage{
     height:100%;
     width:100%;
-
     align-self: flex-start;
     object-fit: cover;
 }
 
+.ParkShowHeader{
+    display: flex;
+    justify-content: center;
+    border-bottom: 2px solid #2c462c;
+}
+#ParkShowHeaderTitle{
+    font-size: 60%;
+    display: flex;
+    padding-left: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+#ParkShowHeaderLogo{
+    display: flex;
+    justify-content: flex-end;
+}
