@@ -20,26 +20,20 @@
             {{Form::text('description', $value = old('description'), $attributes = ["class"=>"form-control"])}}
         </div>
         <div id="CreateFormCol" class="col-12">
+            {{Form::label('nationalpark','Nemzeti park:',['class'=>'label'])}}
+            {{Form::text('nationalpark', $value = old('nationalpark'), $attributes = ["class"=>"form-control"])}}
+        </div>
+        <div id="CreateFormCol" class="col-12">
             {{Form::label('map','Google map link:',['class'=>'label'])}}
             {{Form::text('map', $value = old('map'), $attributes = ["class"=>"form-control"])}}
         </div>
         <div id="CreateFormCol" class="col-12">
             {{Form::submit('Hozzáadás', ['class' => 'btn btn-primary'])}}
             {!! Form::close() !!}
-            @if(session()->has('success'))
-                <p>{{session('success')}}</p>
-            @endif
         </div>
-
-
-
-
-
-
-
-
-
-
+        @if(session()->has('success'))
+            <p>{{session('success')}}</p>
+        @endif
     </div>
 
 @endsection

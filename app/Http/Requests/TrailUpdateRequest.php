@@ -18,6 +18,7 @@ class TrailUpdateRequest extends FormRequest
             "length" => ["max:10"],
             "difficulty" => ["max:25","string"],
             "description" => ["string","max:255"],
+            "nationalpark" => ["string","max:255"],
             "map" => ["max:500","string"]
         ];
     }

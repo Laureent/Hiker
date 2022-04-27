@@ -13,7 +13,8 @@ class Trail extends Model
       'place',
       'length',
       'difficulty',
-      'description',
+        'description',
+        'nationalpark',
       'img',
       'map',
     ];

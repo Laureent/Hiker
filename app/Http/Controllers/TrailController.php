@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\TrailStoreRequest;
+use App\Http\Requests\TrailUpdateRequest;
 use App\Models\Trail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -50,6 +51,19 @@ class TrailController extends Controller
         return view('admin.create',[
             'user' => Auth::user(),
         ]);
+    }
+
+    public function showUpdate($id){
+        return view('admin.update',[
+            'user' => Auth::user(),
+            'trail' => Trail::find($id),
+        ]);
+    }
+
+    public function update(TrailUpdateRequest $request,$id){
+        $data = $request->validated();
+        Trail::where('id',$id)->update($data);
+        session()->flash('success',"Sikeres módosítás!");
     }
 
     public function destroy($id){

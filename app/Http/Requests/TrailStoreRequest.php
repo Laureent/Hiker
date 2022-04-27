@@ -19,7 +19,7 @@ class TrailStoreRequest extends FormRequest
             "length" => ["required","max:10"],
             "difficulty" => ["required","max:25","string"],
             "description" => ["required","string","max:255"],
-            "img" => ["string"],
+            "nationalpark" => ["string","max:255"],
             "map" => ['required',"max:500","string"]
         ];
     }

@@ -44,6 +44,8 @@ Route::group(['middleware' => 'auth'], function (){
 
     //Admin->Útvonalak szerkesztése
     Route::get('/admin/create',[TrailController::class,'create'])->name('admin.create');
+    Route::get('/admin/update/{id}',[TrailController::class,'showUpdate'])->name('admin.update');
+    Route::put('/admin/update/store/{id}',[TrailController::class,'update'])->name('admin.update.store');
     Route::post('/admin/create/store',[TrailController::class,'store'])->name('admin.store');
     Route::get('/admin/delete/{id}',[TrailController::class,'destroy'])->name('admin.destroy');
 

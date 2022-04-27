@@ -26,6 +26,7 @@
 
         <iframe src="{{$trail->map}}"></iframe>
             @if($user->admin == 1)
+                <button onclick="window.location.href='{{route('admin.update',['id' => $trail->id])}}'">Útvonal módosítása</button>
                 <button onclick="window.location.href='{{route('admin.destroy',['id' => $trail->id])}}'">Útvonal törlése</button>
             @endif
     </div>
