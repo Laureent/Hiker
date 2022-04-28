@@ -1,10 +1,11 @@
 <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+    <a href="{{route('home')}}" onclick="">Főoldal</a>
+    <a href="{{route('trails.index')}}">Útvonalak</a>
     @if($user->admin == 1)
         <a href="{{route('admin.create')}}">Hozzáadás</a>
     @endif
-    <a href="{{route('home')}}" onclick="">Főoldal</a>
-    <a href="{{route('trails.index')}}">Útvonalak</a>
     <a href="{{route('parks.list')}}">Nemzeti Parkok</a>
     <a href="#"> @auth
             <form class="d-flex" action="{{route("auth.logout")}}" method="post" >
