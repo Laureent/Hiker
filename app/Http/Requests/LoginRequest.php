@@ -11,6 +11,11 @@ class LoginRequest extends FormRequest
         return true;
     }
 
+    /**
+     * @return \string[][]
+     * Az alábbi szabájok alapján validálja az adatokat.
+     */
+
     public function rules()
     {
         return [
@@ -19,10 +24,16 @@ class LoginRequest extends FormRequest
         ];
     }
 
+    /**
+     * @return string[]
+     * Hibás adat esetén a megfelelő hibaüzenetet adja vissza.
+     */
+
     public function messages()
     {
-        return ['email.required' => 'Adja meg az email címét!',
+        return [
+            'email.required' => 'Adja meg az email címét!',
             'password.required' => 'Adja meg a jelszavát!',
-            ];
+        ];
     }
 }

@@ -32,6 +32,7 @@ Route::get('/login',[AuthController::class,'login'])->name("auth.login");
 Route::post('/authenticate',[AuthController::class,'authenticate'])->name("authenticate");
 Route::post('/logout',[AuthController::class,'logout'])->name("auth.logout");
 
+//Bejelentkezést igénylő route-ok
 Route::group(['middleware' => 'auth'], function (){
     //Főoldal
     Route::get('/index', [HikerController::class,"index"])->name("home");

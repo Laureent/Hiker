@@ -11,15 +11,31 @@ class TrailUpdateRequest extends FormRequest
         return true;
     }
 
+    /**
+     * @return \string[][]
+     * Az alábbi szabájok alapján validálja az adatokat.
+     */
+
     public function rules()
     {
         return [
-            "place" => ["max:100"],
             "length" => ["max:10"],
-            "difficulty" => ["max:25"],
             "description" => ["max:255"],
             "nationalpark" => ["max:255"],
-            "map" => ["max:500"]
+        ];
+    }
+
+    /**
+     * @return string[]
+     * Hibás adat esetén a megfelelő hibaüzenetet adja vissza.
+     */
+
+    public function messages()
+    {
+        return [
+            'length.max' => 'A távolság maximum 10 karakter lehet!',
+            'description.max' => 'Az útvonal leírása maximum 500 karakter lehet!',
+            'nationalpark.max' => 'A nemzeti park neve maximum 255 karakter lehet!',
         ];
     }
 }
