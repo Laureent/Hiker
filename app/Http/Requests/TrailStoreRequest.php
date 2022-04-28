@@ -12,32 +12,21 @@ class TrailStoreRequest extends FormRequest
         return true;
     }
 
-    /**
-     * @return \string[][]
-     * Az alábbi szabájok alapján validálja az adatokat.
-     */
-
     public function rules()
     {
         return [
-            "place" => ["required"],
+            "place" => ["required","max:100"],
             "length" => ["required","max:10"],
-            "difficulty" => ["required"],
+            "difficulty" => ["required",],
             "description" => ["required",":500"],
             "nationalpark" => ["max:255"],
             "map" => ['required',],
         ];
     }
 
-    /**
-     * @return string[]
-     * Hibás adat esetén a megfelelő hibaüzenetet adja vissza.
-     */
-
     public function messages()
     {
-        return [
-            'place.required' => 'Adja meg az útvonal helyét!',
+        return ['place.required' => 'Adja meg az útvonal helyét!',
             'length.required' => 'Adja meg az útvonal hosszát!',
             'length.max' => 'A távolság maximum 10 karakter lehet!',
             'difficulty.required' => 'Válassza ki az útvonal nehézségét!',
@@ -45,6 +34,6 @@ class TrailStoreRequest extends FormRequest
             'description.max' => 'Az útvonal leírása maximum 500 karakter lehet!',
             'nationalpark.max' => 'A nemzeti park neve maximum 255 karakter lehet!',
             'map.required' => 'Adja meg az útvonal Google Maps linkjét!',
-        ];
+            ];
     }
 }

@@ -11,11 +11,6 @@ class RegisterStoreRequest extends FormRequest
         return true;
     }
 
-    /**
-     * @return \string[][]
-     * Az alábbi szabájok alapján validálja az adatokat.
-     */
-
     public function rules()
     {
         return [
@@ -25,15 +20,9 @@ class RegisterStoreRequest extends FormRequest
         ];
     }
 
-    /**
-     * @return string[]
-     * Hibás adat esetén a megfelelő hibaüzenetet adja vissza.
-     */
-
     public function messages()
     {
-        return [
-            'name.required' => 'A név mező kitöltése kötelező!',
+        return ['name.required' => 'A név mező kitöltése kötelező!',
             'name.unique' => 'A név már foglalt.',
             'name.' => 'A név maximum 255 karakter lehet!',
             'email.required' => 'Az email mező kitöltése kötelező!',
@@ -43,6 +32,6 @@ class RegisterStoreRequest extends FormRequest
             'password.confirmed' => 'A jelszó megerősítés kitöltése kötelező!',
             'password.min' => 'A jelszónak legalább 7 karakternek kell lennie!',
             'password.max' => 'A jelszó maximum 255 karakter lehet!',
-        ];
+            ];
     }
 }

@@ -10,12 +10,6 @@ use Illuminate\Support\Facades\Auth;
 
 class ImageController extends Controller
 {
-    /**
-     * @param $id
-     * @return mixed
-     * A paraméterben kapott ID alapján megjeleníti az útvonalhoz tartozó képfeltöltési űrlapot.
-     */
-
     public function index($id)
     {
         return view('admin.upload', [
@@ -23,14 +17,6 @@ class ImageController extends Controller
             'id' => $id,
         ]);
     }
-
-    /**
-     * @param Request $request
-     * @param $id
-     * @return mixed
-     * A paraméterben kapott adatokat validálja, nem megfelelő adat esetén hibát ad vissza.
-     * Megfelelő adat esetén feltölti a képet az "img" mappába, majd ID alapján hozzá adja a kép nevét az útvonalhoz, ez után megjeleníti a kép feltöltési űrlapot.
-     */
 
     public function store(Request $request,$id)
     {
@@ -50,12 +36,6 @@ class ImageController extends Controller
         }
         return back();
     }
-
-    /**
-     * @param $id
-     * @return mixed
-     * A paraméterben kapott ID alapján törli a kép nevét az adatbázisból, majd megjeleníti az előtő oldalt.
-     */
 
     public function delete($id){
         $path = '/img/Trails/'.Trail::find($id)->img;
