@@ -30,6 +30,13 @@
         <div id="CreateFormCol" class="col-12">
             {{Form::submit('Hozzáadás', ['class' => 'btn btn-primary'])}}
             {!! Form::close() !!}
+            @if($errors->any)
+                <ul>
+                @foreach($errors->all() as $message)
+                    <li>{{$message}}</li>
+                @endforeach
+                </ul>
+            @endif
         </div>
         @if(session()->has('success'))
             <p>{{session('success')}}</p>

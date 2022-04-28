@@ -13,10 +13,12 @@ class AuthController extends Controller
     }
 
     public function authenticate(LoginRequest $request){
-        $data = $request->validated();
+        $data = $request->validated([
+
+        ]);
 
         if(!Auth::attempt($data)){
-            $request->session()->flash("danger","Sikertelen bejelentkezés");
+            $request->session()->flash("danger","Sikertelen bejelentkezés.");
             return redirect()->route("auth.login");
         }
 

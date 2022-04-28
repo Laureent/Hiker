@@ -18,4 +18,11 @@ class LoginRequest extends FormRequest
             "password" =>["required"],
         ];
     }
+
+    public function messages()
+    {
+        return ['email.required' => 'Adja meg az email címét!',
+            'password.required' => 'Adja meg a jelszavát!',
+            ];
+    }
 }

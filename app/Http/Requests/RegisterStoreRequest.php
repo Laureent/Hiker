@@ -19,4 +19,19 @@ class RegisterStoreRequest extends FormRequest
             "password" => ["required","confirmed", "min:7","max:255"],
         ];
     }
+
+    public function messages()
+    {
+        return ['name.required' => 'A név mező kitöltése kötelező!',
+            'name.unique' => 'A név már foglalt.',
+            'name.' => 'A név maximum 255 karakter lehet!',
+            'email.required' => 'Az email mező kitöltése kötelező!',
+            'email.unique' => 'Az email már foglalt.',
+            'email.max' => 'Az email maximum 255 karakter lehet!',
+            'password.required' => 'A jelszó kitöltése kötelező!',
+            'password.confirmed' => 'A jelszó megerősítés kitöltése kötelező!',
+            'password.min' => 'A jelszónak legalább 7 karakternek kell lennie!',
+            'password.max' => 'A jelszó maximum 255 karakter lehet!',
+            ];
+    }
 }

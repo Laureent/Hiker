@@ -48,14 +48,15 @@
                         {{Form::submit('Regisztráció', ['class' => 'btn btn-primary'])}}
                     </div>
                     <p class="pointer">Van már fiókja?<a href="{{route('auth.login')}}"> Itt be tud jelentkezni</a></p>
+                    @if($errors->any)
+                        <ul>
+                            @foreach($errors->all() as $message)
+                                <li>{{$message}}</li>
+                            @endforeach
+                        </ul>
+                    @endif
                 </div>
                 {!! Form::close() !!}
-
-                @if($errors->any)
-                    @foreach($errors->all() as $message)
-                        <li>{{$message}}</li>
-                    @endforeach
-                @endif
             </div>
         </div>
     </section>

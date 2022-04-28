@@ -37,14 +37,18 @@
                     {{Form::submit('Bejelentkezés', ['class' => 'btn btn-primary'])}}
                 </div>
                 <p class="pointer">Nincs még fiókja?<a href="{{route('register.create')}}"> Itt regisztráljon</a></p>
+                @if($errors->any)
+                    <ul>
+                        @foreach($errors->all() as $message)
+                            <li>{{$message}}</li>
+                        @endforeach
+                    </ul>
+                @endif
+                @if(session()->has('danger'))
+                    <p>{{session('danger')}}</p>
+                @endif
             </div>
             {!! Form::close() !!}
-
-            @if($errors->any)
-                @foreach($errors->all() as $message)
-                    <li>{{$message}}</li>
-                @endforeach
-            @endif
         </div>
     </div>
 @endsection

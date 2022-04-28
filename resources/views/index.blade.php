@@ -12,6 +12,5 @@
             <a href="{{route('auth.login')}}"><button>Bejelentkezés</button></a>
             <a href="{{route('register.create')}}"><button>Regisztráció</button></a>
         </div>
-
     </div>
 @endsection
