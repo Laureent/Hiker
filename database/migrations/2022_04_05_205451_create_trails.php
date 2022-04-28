@@ -16,7 +16,7 @@ class CreateTrails extends Migration
             $table->string('img')->nullable()->default(null);
             $table->string('nationalpark')->nullable()->default(null);
             $table->string('description',500);
-            $table->string('map',800);
+            $table->string('map',1500);
             $table->timestamps();
         });
     }

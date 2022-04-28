@@ -24,7 +24,7 @@
             <div id="TrailIndexCardContent">
                 <h5 class="card-title">{{$trail->place}}</h5>
                 <ul>
-                    <li>Túra hossza: {{$trail->length}}Km</li>
+                    <li>Túra hossza: {{$trail->length}} Km</li>
                     <li>Túra nehézsége: {{$trail->difficulty}}</li>
                 </ul>
                 <a href="{{route('trails.show',$trail->id)}}"><button class="btn btn-success">Megtekintés</button></a>
