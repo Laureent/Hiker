@@ -3,9 +3,9 @@
 @section('content')
     <div id="CreateFormRow" class="div">
         <div id="CreateFormCol" class="col-12">
-            {!! Form::open(['route' => ['admin.update.store','id' => $trail->id],'method'=>'put']) !!}
+            {!! Form::open(['method'=>'put','route' => ['admin.update.store','id' => $trail->id]]) !!}
             {{Form::label('place','Helység neve',['class'=>'label'])}}
-            {{Form::text('place', $value = old('place'), $attributes = ["class"=>"form-control"])}}
+            {{Form::text('place', $value = old($trail->place), $attributes = ["class"=>"form-control"])}}
         </div>
         <div id="CreateFormCol" class="col-12">
             {{Form::label('length','Az útvonal hossza',['class'=>'label'])}}

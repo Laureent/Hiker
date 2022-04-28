@@ -62,12 +62,15 @@ class TrailController extends Controller
 
     public function update(TrailUpdateRequest $request,$id){
         $data = $request->validated();
-        Trail::where('id',$id)->update($data);
+        $filtered = array_filter(array_map('trim', $data), 'strlen');
+        Trail::where('id',$id)->first()->update($filtered);
         session()->flash('success',"Sikeres módosítás!");
+        return redirect()->route('admin.update',['id' => $id]);
     }
 
     public function destroy($id){
         Trail::find($id)->delete();
-        return redirect(route('trails.index'));
+        session()->flash('success',"Sikeres törlés!");
+        return redirect()->route('trails.index');
     }
 }
