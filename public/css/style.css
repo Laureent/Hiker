@@ -1,4 +1,4 @@
-/*Loading Spinner Style*/
+/* töltésjelző tekerő stílus */
 .loader{
     height: 100vh;
     width: 100vw;
@@ -27,7 +27,7 @@
     }
 }
 
-/*Feed Style*/
+/* főoldal stílus */
 .card{
     margin-top: 2rem;
     margin-bottom: 2rem;
@@ -68,60 +68,7 @@
     width: 40%;
 }
 
-/* Friends Styles*/
-.pagination li a.page-link{
-    border-top-left-radius: .2rem;
-    border-bottom-left-radius: .2rem;
-    background-color:white;
-    color: #5A7359;
-}
-.pagination li a.page-link:hover{
-    z-index: 1;
-    color: #fff;
-    background-color: #5A7359;
-    border-color: #8f8f9d;
-}
-.page-item.active .page-link{
-    z-index: 1;
-    color: #fff;
-    background-color: #5A7359;
-    border-color: #8f8f9d;
-}
-#search{
-    padding-top: 0px;
-    padding-bottom: 0px;
-    padding-left:5px;
-    padding-right: 5px;
-    text-align: center;
-    height: 35px;
-    color: #5A7359;
-    border: solid 2px #5A7359;
-    border-top-right-radius:20px;
-    border-bottom-right-radius:20px;
-}
-#search:hover{
-    color:white;
-    background-color: #5A7359;
-}
-input[type=text]:focus{
-    outline: none;
-    border-color:#5A7359;
-    border-radius: 1px;
-}
-#name{
-    padding-left: 10px;
-    height: 35px;
-    width: 20rem;
-    border-top-left-radius:20px;
-    border-bottom-left-radius:20px;
-}
-.searchbar{
-    margin: auto;
-    display: flex;
-    align-items: center;
-}
-
-/*Trails Index & Show Styles*/
+/* Túrák oldalainak stílusai */
 .TrailIndexCard{
     height: 300px;
     display: flex;
@@ -157,13 +104,16 @@ input[type=text]:focus{
     text-align: center;
 }
 
-/* Admin Form styles */
+/* Admin űrlap Stílusok */
 #CreateFormRow{
     border: 1px solid #b3b3b8;
     border-radius: 20px;
     padding-top: 2rem;
     padding-bottom: 2rem;
-
+    margin-top: 2rem;
+    margin-left:1rem;
+    margin-right:1rem;
+    margin-bottom: 1rem;
 }
 #CreateFormCol{
     padding-top: 1rem;
@@ -199,7 +149,7 @@ input[type=text]:focus{
     color: white;
 }
 
-/* Trial Showing pages Styles */
+/* Túra bemutató oldalak stílusa */
 .TrailShowPic{
     max-width:1000px;
     min-width: 350px;
@@ -235,13 +185,20 @@ iframe{
     border-color: #5a7359;
 }
 
-/* Parks Styles */
+/* Parkok stílusa */
 
 #ParksIndexCol{
     display: flex;
     flex-flow: column;
     align-items: center;
     margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+#ParksIndexCol:hover{
+    border: 1px solid #E5DCBB;
+    border-radius: 10px;
+    padding:0.5rem;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 #ParkLogoImage{
     height:100%;
@@ -265,4 +222,36 @@ iframe{
 #ParkShowHeaderLogo{
     display: flex;
     justify-content: flex-end;
+}
+#Upload{
+    background: #5a7359;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    border-radius: 20px;
+    padding: 1rem;
+    margin-top:2rem;
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
+}
+#TrailPicUpload{
+    width: 300px;
+    align-self: center;
+    border-radius: 10px;
+    margin: 1rem;
+}
+#TrailPicUploadBar{
+    align-self: center;
+}
+#TrailPicUploadBar button{
+    background-color: #9CAE96;
+    border: none;
+}
+.form-control[type="file"]:not(:disabled):not([readonly]) {
+    cursor: pointer;
+    width: max-content;
+    margin-bottom: 0.5rem;
 }

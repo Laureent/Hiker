@@ -13,7 +13,6 @@
     @endif
     @foreach($trails as $trail)
         <div class="TrailIndexCard">
-
             <div  id="TrailIndexCardpicContainer">
                 @if($trail->img == null)
                     <img src="{{asset("img/Trails/placeholder.jpg")}}" id="TrailIndexCardpic" class="img img-fluid" alt="placeholder">
@@ -29,7 +28,6 @@
                 </ul>
                 <a href="{{route('trails.show',$trail->id)}}"><button class="btn btn-success">Megtekintés</button></a>
             </div>
-
         </div>
     @endforeach
 @endsection
