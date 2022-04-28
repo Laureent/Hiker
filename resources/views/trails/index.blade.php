@@ -8,7 +8,9 @@
     {{Form::submit('Szűrés', ['class' => 'btn btn-success'])}}
     {!! Form::close()!!}
 </div>
-
+    @if(session()->has('success'))
+        <p>{{session('success')}}</p>
+    @endif
     @foreach($trails as $trail)
         <div class="TrailIndexCard">
 

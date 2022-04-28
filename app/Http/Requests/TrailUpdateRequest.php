@@ -14,12 +14,12 @@ class TrailUpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            "place" => ["string","max:100"],
+            "place" => ["max:100"],
             "length" => ["max:10"],
-            "difficulty" => ["max:25","string"],
-            "description" => ["string","max:255"],
-            "nationalpark" => ["string","max:255"],
-            "map" => ["max:500","string"]
+            "difficulty" => ["max:25"],
+            "description" => ["max:255"],
+            "nationalpark" => ["max:255"],
+            "map" => ["max:500"]
         ];
     }
 }
