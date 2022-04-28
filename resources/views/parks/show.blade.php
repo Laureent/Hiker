@@ -27,24 +27,24 @@
 
 
     @foreach($trails as $trail)
-        <div class="result">
-            <div class="row">
-                <div  id="card_result_pic" class="col-6">
-                    @if($trail->img == null)
-                        <img src="{{asset("img/Trails/placeholder.jpg")}}" id="result_pic" class=" img-fluid rounded-start" alt="placeholder">
-                    @else
-                        <img src="{{asset("img/Trails/".$trail->img)}}" id="result_pic" class=" img-fluid rounded-start" alt="{{$trail->img}}">
-                    @endif
-                </div>
-                <div id="card_result_content" class="col-6">
-                    <h5 class="card-title">{{$trail->place}}</h5>
-                    <ul>
-                        <li>{{$trail->length}}</li>
-                        <li>{{$trail->difficulty}}</li>
-                    </ul>
-                    <a href="{{route('trails.show',$trail->id)}}"><button class="btn btn-success">Megtekintés</button></a>
-                </div>
+        <div class="TrailIndexCard">
+
+            <div  id="TrailIndexCardpicContainer" class="col-6">
+                @if($trail->img == null)
+                    <img src="{{asset("img/Trails/placeholder.jpg")}}" id="TrailIndexCardpic" class="img img-fluid" alt="placeholder">
+                @else
+                    <img src="{{asset("img/Trails/".$trail->img)}}" id="TrailIndexCardpic" class="img img-fluid" alt="{{$trail->img}}">
+                @endif
             </div>
+            <div id="TrailIndexCardContent" class="col-6">
+                <h5 class="card-title">{{$trail->place}}</h5>
+                <ul>
+                    <li>Túra hossza: {{$trail->length}}Km</li>
+                    <li>Túra nehézsége: {{$trail->difficulty}}</li>
+                </ul>
+                <a href="{{route('trails.show',$trail->id)}}"><button class="btn btn-success">Megtekintés</button></a>
+            </div>
+
         </div>
     @endforeach
 @endsection

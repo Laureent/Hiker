@@ -145,7 +145,7 @@ input[type=text]:focus{
 }
 #TrailIndexCardContent{
     display: flex;
-   justify-content: center;
+    justify-content: center;
     flex-direction: column;
     margin: auto;
 }
