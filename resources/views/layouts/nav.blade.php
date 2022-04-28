@@ -6,7 +6,6 @@
     <a href="{{route('home')}}" onclick="">Főoldal</a>
     <a href="{{route('trails.index')}}">Útvonalak</a>
     <a href="{{route('parks.list')}}">Nemzeti Parkok</a>
-    <a href="{{route('friends.index')}}">Barátok</a>
     <a href="#"> @auth
             <form class="d-flex" action="{{route("auth.logout")}}" method="post" >
                 @csrf

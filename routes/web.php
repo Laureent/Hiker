@@ -55,10 +55,6 @@ Route::group(['middleware' => 'auth'], function (){
     Route::get('/admin/image/delete/{id}',[ImageController::class,'delete'])->name('admin.image.delete');
 });
 
-//Barátok
-Route::get('/friends',[FriendshipController::class,'index'])->middleware('auth')->name('friends.index');
-Route::get('/friends/search',[FriendshipController::class,'search'])->middleware('auth')->name('friends.search');
-
 
 
 

@@ -20,9 +20,3 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-//Friends
-Route::get('/friends/search/{name}',[FriendshipController::class,'show'])->name('friends.show');
-Route::put('/friends/search/{id}',[FriendshipController::class,'acceptRequest'])->name('friends.accept');
-Route::post('/friends/add/{id}',[FriendshipController::class,'addFriend'])->name('friends.add');
-Route::delete('/friends/delete/{id}',[FriendshipController::class,'deleteFriends'])->name('friends.delete');
-
