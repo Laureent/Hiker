@@ -8,7 +8,6 @@
                                 </a>
                             <p>{{$park->name}}</p>
                         </div>
-
                 @endforeach
         </div>
 @endsection

@@ -83,11 +83,18 @@
 }
 #TrailIndexCardpicContainer{
     width: 300px;
-
+    height: 225px;
+    display: flex;
+    align-content: center;
+    background-color: rgba(0, 0, 0, 0.51);
+    border-radius: 10px;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
     object-fit: cover;
 }
 #TrailIndexCardpic{
     width: 300px;
+    border-radius: 10px;
 
 }
 #TrailIndexCardContent{
@@ -156,9 +163,14 @@
     max-height: 830px;
     min-height: 260px;
     margin: auto;
+    display:flex;
+    justify-content: center;
 }
 #TrailShowDefaultPic{
-    width: 100%;
+    max-width:1000px;
+    min-width: 350px;
+    max-height: 830px;
+    min-height: 260px;
 }
 iframe{
     height: 15rem;
@@ -193,6 +205,7 @@ iframe{
     align-items: center;
     margin-top: 3rem;
     margin-bottom: 3rem;
+    padding: 0.6rem;
 }
 #ParksIndexCol:hover{
     border: 1px solid #E5DCBB;
